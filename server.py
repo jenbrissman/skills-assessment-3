@@ -40,30 +40,27 @@ MOST_LOVED_MELONS = {
     },
 }
 
-
-# REPLACE THIS WITH YOUR ROUTES
-
 @app.route("/")
 def homepage():
+    if 'username' in session:
+        return redirect("/top-melons")
+    else:
+        return render_template("homepage.html")
 
-    return render_template("homepage.html")
 
 @app.route("/top-melons")
-def topmelons():
+def add_username():
     if 'username' in session:
         return render_template("top-melons.html")
+    else:
+        return redirect("/")
 
 @app.route("/get-name", methods=['GET'])
-def getname():
+def get_name():
     render_template("homepage.html")
     username = request.args.get('username')
     session['username'] = username
-
-    # if 'name' in session:
-    #     name = session['name']
-    
     return redirect('/top-melons')
-
 
 if __name__ == '__main__':
     # We have to set debug=True here, since it has to be True at the
