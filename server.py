@@ -42,22 +42,19 @@ MOST_LOVED_MELONS = {
 
 @app.route("/")
 def homepage():
-    if 'username' in session:
-        return redirect("/top-melons")
-    else:
-        return render_template("homepage.html")
+   return render_template("homepage.html")
 
 
 @app.route("/top-melons")
 def add_username():
     if 'username' in session:
-        return render_template("top-melons.html")
+        return render_template("top-melons.html", username="username", dict=MOST_LOVED_MELONS)
+
     else:
-        return redirect("/")
+        return redirect("homepage.html")
 
 @app.route("/get-name", methods=['GET'])
 def get_name():
-    render_template("homepage.html")
     username = request.args.get('username')
     session['username'] = username
     return redirect('/top-melons')

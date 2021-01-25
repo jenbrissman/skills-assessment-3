@@ -1,21 +1,22 @@
 {% extends "base.html" %} 
 
+
 <!doctype html>
 <html>
 <head>
   <title>Top Melons</title>
-  <link rel="stylesheet" type="text/css" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-  <!-- Create a div for every Most Loved Melon using a Jinja for-loop -->
+
 
 <div class="melon-div"></div>
 <h1>Welcome, {{username}} ! Nice to see you!</h1>
 
-{% for key, values in MOST_LOVED_MELONS.items() %}
-  <div><h3>{{username}}! This is a {{MOST_LOVED_MELONS[key]['name']}}</h3></div>
-  <div>This melon was loved: {{MOST_LOVED_MELONS[key]['num_loves']}} times</div>
-  <div> <img src= {{MOST_LOVED_MELONS[key]['img']}} alt= melon image </div>
+{% for key, values in dict.items() %}
+  <div><h3>{{username}}! This is a {{dict[key]['name']}}</h3></div>
+  <div>This melon was loved: {{dict[key]['num_loves']}} times</div>
+  <div> <img src= "{{ dict[key]['img']}}" </div>
   {% endfor %}
   
 </body>

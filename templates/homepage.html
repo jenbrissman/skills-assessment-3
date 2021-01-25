@@ -3,15 +3,17 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <title>TOP MELONS</title>
     </head>
     <body>
 <div>
     <h1>Ubermelon's Most Loved Melons</h1>
     <img src="https://www.levarht.com/wp-content/uploads/2018/05/25-Cantaloupe-800x674.png" height="300"
     width="237" alt="Sexy Cantaloupe" class=center>
-    <form action="/get-name" method="get">
-        <label>Name:</label>
-        <input type=name required="true">
+    <form action="/get-name" method="GET">
+        Please enter your name:
+        <input type="text" name="username" required="true">
         <input type="submit" value="Submit">
     </form>
 </div>    
