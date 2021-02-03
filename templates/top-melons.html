@@ -1,24 +1,9 @@
-{% extends "base.html" %} 
-
-
-<!doctype html>
-<html>
-<head>
-  <title>Top Melons</title>
-  <link rel="stylesheet" href="/static/styles.css">
-</head>
-<body>
-
-
-<div class="melon-div"></div>
-<h1>Welcome, {{username}} ! Nice to see you!</h1>
-
-{% for key, values in dict.items() %}
-  <div><h3>{{username}}! This is a {{dict[key]['name']}}</h3></div>
-  <div>This melon was loved: {{dict[key]['num_loves']}} times</div>
-  <div> <img src= "{{ dict[key]['img']}}" </div>
-  {% endfor %}
-  
-</body>
-</html>
-
+{% extends "base.html" %} {% block content %}
+<h1>Welcome {{ username }}!</h1>
+{% for key, value in melons.items() %}
+<div class="melon-div">
+  <h3>{{ username }}, this is a: {{ melons[key]["name"] }}</h3>
+  <h2>Loved {{ melons[key]["num_loves"] }} times.</h2>
+  <img src={{ melons[key]["img"] }}>
+</div>
+{% endfor %} {% endblock %}

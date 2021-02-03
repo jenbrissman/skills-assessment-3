@@ -1,11 +1,7 @@
-
-
 img {
   height: 200px;
   width: 200px;
-
   border: solid 1px green;
-
 }
 
 .melon-div {
@@ -14,8 +10,12 @@ img {
   width: 205px;
 }
 
-h1 {
-  font-family: sans-serif;
+body {
+  background-color: coral
 }
 
-body {background-color: coral;}
+h1 {
+  font-family: sans-serif;
+  color: red
+
+}
